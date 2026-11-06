@@ -1,0 +1,23 @@
+[
+  {
+    "dataset": "synthetic",
+    "metric": "gift-coverage",
+    "status": "completed",
+    "summary": "观看用户送礼覆盖率由 17.784% 变为 12.296%，下降。变化 -5.489 个百分点。相对变化：-30.862%。",
+    "html": "synthetic-gift-coverage/report.html"
+  },
+  {
+    "dataset": "synthetic",
+    "metric": "viewer-activity",
+    "status": "completed",
+    "summary": "日均观看人数由 293.333 变为 295.500，上升。差值 2.167 人/日。相对变化：0.739%。",
+    "html": "synthetic-viewer-activity/report.html"
+  },
+  {
+    "dataset": "synthetic",
+    "metric": "gift-value",
+    "status": "completed",
+    "summary": "礼物总价值由 1,649.000 变为 1,202.000，下降。差值 -447.000 原始礼物价值单位。相对变化：-27.107%。",
+    "html": "synthetic-gift-value/report.html"
+  }
+]

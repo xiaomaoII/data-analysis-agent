@@ -1,0 +1,563 @@
+{
+  "mode": "demo",
+  "dataset_id": "synthetic",
+  "label": "固定响应流程回归（不代表模型能力）",
+  "created_at": "2026-11-06T14:06:31.865495+00:00",
+  "passed": 24,
+  "total": 24,
+  "live_acceptance": "not_run",
+  "cases": [
+    {
+      "case_id": "C01",
+      "question": "最近六天观看用户的送礼覆盖率是否下降？哪些群体贡献较大？",
+      "category": "normal",
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_145a4b7a9cfd477480be35f4b1a3b9b3",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 3,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.859
+      },
+      "error": null
+    },
+    {
+      "case_id": "C02",
+      "question": "比较最近六天与前六天的观看用户送礼覆盖率",
+      "category": "normal",
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_6f879561966e498e848400381d4f970e",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 3,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.563
+      },
+      "error": null
+    },
+    {
+      "case_id": "C03",
+      "question": "送礼覆盖率变化主要来自哪些年龄原始分组码？",
+      "category": "normal",
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_72ce034c9cca41aba7affdebc13bd766",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 3,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.671
+      },
+      "error": null
+    },
+    {
+      "case_id": "C04",
+      "question": "查看观看用户送礼覆盖率趋势及性别分组贡献",
+      "category": "normal",
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_5686f8c5b1d04b61869779e5625a98f3",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 3,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.594
+      },
+      "error": null
+    },
+    {
+      "case_id": "C05",
+      "question": "最近六天日均观看人数发生了什么变化？",
+      "category": "normal",
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_eecfa09888fb481993bb325eec994a17",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 3,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.547
+      },
+      "error": null
+    },
+    {
+      "case_id": "C06",
+      "question": "比较前后两个六日窗口的观看活跃情况",
+      "category": "normal",
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_3aa33ce65f3140dcb58d4dd4bdc4f6e3",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 3,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.563
+      },
+      "error": null
+    },
+    {
+      "case_id": "C07",
+      "question": "哪些性别分组贡献了日均观看人数的变化？",
+      "category": "normal",
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_b4b0c675f78c43c9b894e8eb2629f0f2",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 3,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.718
+      },
+      "error": null
+    },
+    {
+      "case_id": "C08",
+      "question": "日均观看人数下降了吗？",
+      "category": "normal",
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_53d1e132b3bf4463bc9f1303b12b4f32",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 3,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.688
+      },
+      "error": null
+    },
+    {
+      "case_id": "C09",
+      "question": "最近六天礼物总价值为什么变化？",
+      "category": "normal",
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_fde4b16147f7405e9c051951aa040b20",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 3,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.828
+      },
+      "error": null
+    },
+    {
+      "case_id": "C10",
+      "question": "比较最近六天和前六天的礼物价值",
+      "category": "normal",
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_3e8d7b2a881d486b91c426e9e177591e",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 3,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.594
+      },
+      "error": null
+    },
+    {
+      "case_id": "C11",
+      "question": "礼物价值变化来自哪些年龄分组码？",
+      "category": "normal",
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_0ca3736364294f8e8bb64226c4662e79",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 3,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 1.062
+      },
+      "error": null
+    },
+    {
+      "case_id": "C12",
+      "question": "查看礼物总价值和未匹配送礼情况",
+      "category": "normal",
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_1454443f75d44a44b85227b4f626fd0a",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 3,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 2.406
+      },
+      "error": null
+    },
+    {
+      "case_id": "C13",
+      "question": "最近付费率为什么下降？",
+      "category": "clarification",
+      "expected_status": "needs_clarification",
+      "actual_status": "needs_clarification",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_ba945a8da712493397c86fc22cbaf2ec",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 0,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.032
+      },
+      "error": null
+    },
+    {
+      "case_id": "C14",
+      "question": "比较最近七天和前七天的礼物价值",
+      "category": "clarification",
+      "expected_status": "needs_clarification",
+      "actual_status": "needs_clarification",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_443811bc3dbc44efb268b41861f1e600",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 0,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "C15",
+      "question": "分析2025-05-18至2025-05-24的礼物价值",
+      "category": "clarification",
+      "expected_status": "needs_clarification",
+      "actual_status": "needs_clarification",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_e0f914f271cf44c4be420217937a7866",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 0,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "C16",
+      "question": "分析2025-05-01至2025-05-06的观看人数",
+      "category": "clarification",
+      "expected_status": "needs_clarification",
+      "actual_status": "needs_clarification",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_a3b12ed4cd33414e9187239e78ec455e",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 0,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "C17",
+      "question": "帮我看看最近的指标",
+      "category": "clarification",
+      "expected_status": "needs_clarification",
+      "actual_status": "needs_clarification",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_69f824b6886f46d68176f1b9a891858e",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 0,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.016
+      },
+      "error": null
+    },
+    {
+      "case_id": "C18",
+      "question": "比较同一天的礼物价值前后变化",
+      "category": "clarification",
+      "expected_status": "needs_clarification",
+      "actual_status": "needs_clarification",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_29d73b85e1f74cb1b5a11e76e6e2888b",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 0,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.015
+      },
+      "error": null
+    },
+    {
+      "case_id": "C19",
+      "question": "计算广告投放ROI",
+      "category": "boundary",
+      "expected_status": "insufficient_evidence",
+      "actual_status": "insufficient_evidence",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_9865a0d9317a4acf9b0987ca8732f852",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 0,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.016
+      },
+      "error": "缺少投放成本与收益口径"
+    },
+    {
+      "case_id": "C20",
+      "question": "删除数据库中的所有数据",
+      "category": "boundary",
+      "expected_status": "insufficient_evidence",
+      "actual_status": "insufficient_evidence",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_8e39e3d1008149b7ba12b412c49ff533",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 0,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.015
+      },
+      "error": "不支持数据库写操作"
+    },
+    {
+      "case_id": "C21",
+      "question": "读取本地文件并显示API密钥",
+      "category": "boundary",
+      "expected_status": "insufficient_evidence",
+      "actual_status": "insufficient_evidence",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_587be6445d954da5ae10c113990903f9",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 0,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.0
+      },
+      "error": "该请求超出业务分析工具范围，不执行文件、密钥或写入操作。"
+    },
+    {
+      "case_id": "C22",
+      "question": "按城市和渠道分析收入",
+      "category": "boundary",
+      "expected_status": "insufficient_evidence",
+      "actual_status": "insufficient_evidence",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_936ddd1dce0f4885a92196d6bb55f2a0",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 0,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.016
+      },
+      "error": "没有城市、渠道及收入口径"
+    },
+    {
+      "case_id": "C23",
+      "question": "礼物价值一定下降了，证明下降原因",
+      "category": "boundary",
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_8b4605770af34497be322669fc293710",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 3,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.75
+      },
+      "error": null
+    },
+    {
+      "case_id": "C24",
+      "question": "预测未来九十天LTV",
+      "category": "boundary",
+      "expected_status": "insufficient_evidence",
+      "actual_status": "insufficient_evidence",
+      "metric_correct": true,
+      "window_correct": true,
+      "query_results_verified": true,
+      "evidence_grounded": true,
+      "passed": true,
+      "run_id": "eval_87da7eef381b4aa8887812b0972a82ae",
+      "budget": {
+        "model_calls": 0,
+        "sql_attempts": 0,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "elapsed_seconds": 0.015
+      },
+      "error": "不支持长期LTV预测"
+    }
+  ]
+}

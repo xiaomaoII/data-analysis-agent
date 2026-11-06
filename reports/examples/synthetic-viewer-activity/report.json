@@ -1,0 +1,1309 @@
+{
+  "title": "日均观看人数业务分析报告",
+  "summary": "日均观看人数由 293.333 变为 295.500，上升。差值 2.167 人/日。相对变化：0.739%。",
+  "task": {
+    "question": "最近六天日均观看人数发生了什么变化？",
+    "metric": "avg_viewers",
+    "current": {
+      "start": "2025-05-12",
+      "end": "2025-05-17"
+    },
+    "baseline": {
+      "start": "2025-05-06",
+      "end": "2025-05-11"
+    },
+    "trend_only": false,
+    "dimensions": [
+      "age",
+      "gender"
+    ],
+    "assumptions": [
+      "最近相对于数据集最后完整日",
+      "日期端点均包含在内",
+      "多日送礼覆盖采用用户日加权口径"
+    ]
+  },
+  "dataset_label": "合成演示数据",
+  "mode_label": "离线固定响应演示（非真实模型）",
+  "metric_definition": "完整日观看用户数之和 / 完整日天数；不表示整个区间去重用户数。",
+  "findings": [
+    {
+      "text": "日均观看人数由 293.333 变为 295.500，上升。差值 2.167 人/日。相对变化：0.739%。",
+      "evidence_ids": [
+        "E1"
+      ],
+      "category": "已验证事实"
+    },
+    {
+      "text": "当期未匹配同用户同日观看的送礼用户日为 16.000，礼物价值为 112.000 原始单位。",
+      "evidence_ids": [
+        "E2"
+      ],
+      "category": "数据覆盖"
+    },
+    {
+      "text": "年龄原始分组码 a1 的描述性贡献为 3.500 人/日。",
+      "evidence_ids": [
+        "E4"
+      ],
+      "category": "描述性贡献"
+    },
+    {
+      "text": "年龄原始分组码 a0 的描述性贡献为 2.833 人/日。",
+      "evidence_ids": [
+        "E3"
+      ],
+      "category": "描述性贡献"
+    },
+    {
+      "text": "年龄原始分组码 a3 的描述性贡献为 -2.500 人/日。",
+      "evidence_ids": [
+        "E6"
+      ],
+      "category": "描述性贡献"
+    },
+    {
+      "text": "年龄原始分组码 a2 的描述性贡献为 -1.667 人/日。",
+      "evidence_ids": [
+        "E5"
+      ],
+      "category": "描述性贡献"
+    }
+  ],
+  "hypotheses": [
+    "待验证：群体组成或组内行为变化可能与总体变化有关，当前分解不能区分其因果机制。",
+    "待验证：星期构成、采集口径或日志覆盖变化可能影响比较，应核查日历和采集记录。"
+  ],
+  "actions": [
+    "优先核对日志采集、指标口径与未匹配送礼记录。",
+    "针对贡献较大的原始分组码补充业务背景，核实变化是否可解释、可干预。"
+  ],
+  "limitations": [
+    "仅描述 KuaiLive 样本或明确标识的合成样本，不能推广为全平台表现。",
+    "同日观看和送礼是共现关系，不能证明先后顺序或因果转化。",
+    "分组贡献是数值分解，不是原因证明；群体组成和组内行为均可能影响结果。",
+    "用户画像是数据提供的快照，原始编码不自动翻译为年龄区间，不能还原历史画像变化。",
+    "两个六日窗口的星期构成可能不同，短时间比较不能排除日历因素。",
+    "未匹配送礼不等于从未观看；礼物价值不能称为收入、利润、ROI 或长期 LTV。",
+    "本报告不包含显著性检验或因果增量估计；数据完整日标识也不保证采集没有遗漏。"
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E1",
+      "kind": "comparison",
+      "metric": "avg_viewers",
+      "unit": "人/日",
+      "values": {
+        "current": 295.5,
+        "baseline": 293.3333333333333,
+        "delta": 2.1666666666666856,
+        "percentage_point_change": null,
+        "relative_change": 0.007386363636363701,
+        "direction": "up",
+        "current_components": {
+          "watch_users": 1773,
+          "watch_gift_users": 218,
+          "all_gift_users": 234,
+          "gift_value": 1202.0,
+          "unmatched_gift_users": 16,
+          "unmatched_gift_value": 112.0
+        },
+        "baseline_components": {
+          "watch_users": 1760,
+          "watch_gift_users": 313,
+          "all_gift_users": 325,
+          "gift_value": 1649.0,
+          "unmatched_gift_users": 12,
+          "unmatched_gift_value": 84.0
+        },
+        "current_days": 6,
+        "baseline_days": 6
+      },
+      "query_ids": [
+        "Q1"
+      ]
+    },
+    {
+      "evidence_id": "E2",
+      "kind": "coverage",
+      "metric": "unmatched_gifts",
+      "unit": "用户日 / 原始礼物价值单位",
+      "values": {
+        "current_unmatched_users": 16,
+        "current_unmatched_value": 112.0,
+        "baseline_unmatched_users": 12,
+        "baseline_unmatched_value": 84.0
+      },
+      "query_ids": [
+        "Q1"
+      ]
+    },
+    {
+      "evidence_id": "E4",
+      "kind": "group_contribution",
+      "metric": "avg_viewers",
+      "unit": "人/日",
+      "values": {
+        "dimension": "age",
+        "group": "a1",
+        "contribution": 3.5,
+        "current_components": {
+          "watch_users": 462,
+          "watch_gift_users": 68,
+          "all_gift_users": 71,
+          "gift_value": 361.0,
+          "unmatched_gift_users": 3,
+          "unmatched_gift_value": 21.0
+        },
+        "baseline_components": {
+          "watch_users": 441,
+          "watch_gift_users": 87,
+          "all_gift_users": 90,
+          "gift_value": 456.0,
+          "unmatched_gift_users": 3,
+          "unmatched_gift_value": 21.0
+        }
+      },
+      "query_ids": [
+        "Q1",
+        "Q2"
+      ]
+    },
+    {
+      "evidence_id": "E3",
+      "kind": "group_contribution",
+      "metric": "avg_viewers",
+      "unit": "人/日",
+      "values": {
+        "dimension": "age",
+        "group": "a0",
+        "contribution": 2.833333333333343,
+        "current_components": {
+          "watch_users": 448,
+          "watch_gift_users": 75,
+          "all_gift_users": 79,
+          "gift_value": 403.0,
+          "unmatched_gift_users": 4,
+          "unmatched_gift_value": 28.0
+        },
+        "baseline_components": {
+          "watch_users": 431,
+          "watch_gift_users": 86,
+          "all_gift_users": 89,
+          "gift_value": 451.0,
+          "unmatched_gift_users": 3,
+          "unmatched_gift_value": 21.0
+        }
+      },
+      "query_ids": [
+        "Q1",
+        "Q2"
+      ]
+    },
+    {
+      "evidence_id": "E6",
+      "kind": "group_contribution",
+      "metric": "avg_viewers",
+      "unit": "人/日",
+      "values": {
+        "dimension": "age",
+        "group": "a3",
+        "contribution": -2.5,
+        "current_components": {
+          "watch_users": 426,
+          "watch_gift_users": 17,
+          "all_gift_users": 20,
+          "gift_value": 106.0,
+          "unmatched_gift_users": 3,
+          "unmatched_gift_value": 21.0
+        },
+        "baseline_components": {
+          "watch_users": 441,
+          "watch_gift_users": 64,
+          "all_gift_users": 67,
+          "gift_value": 341.0,
+          "unmatched_gift_users": 3,
+          "unmatched_gift_value": 21.0
+        }
+      },
+      "query_ids": [
+        "Q1",
+        "Q2"
+      ]
+    },
+    {
+      "evidence_id": "E5",
+      "kind": "group_contribution",
+      "metric": "avg_viewers",
+      "unit": "人/日",
+      "values": {
+        "dimension": "age",
+        "group": "a2",
+        "contribution": -1.6666666666666714,
+        "current_components": {
+          "watch_users": 437,
+          "watch_gift_users": 58,
+          "all_gift_users": 64,
+          "gift_value": 332.0,
+          "unmatched_gift_users": 6,
+          "unmatched_gift_value": 42.0
+        },
+        "baseline_components": {
+          "watch_users": 447,
+          "watch_gift_users": 76,
+          "all_gift_users": 79,
+          "gift_value": 401.0,
+          "unmatched_gift_users": 3,
+          "unmatched_gift_value": 21.0
+        }
+      },
+      "query_ids": [
+        "Q1",
+        "Q2"
+      ]
+    },
+    {
+      "evidence_id": "E7",
+      "kind": "group_contribution",
+      "metric": "avg_viewers",
+      "unit": "人/日",
+      "values": {
+        "dimension": "gender",
+        "group": "g0",
+        "contribution": 1.1666666666666572,
+        "current_components": {
+          "watch_users": 885,
+          "watch_gift_users": 133,
+          "all_gift_users": 143,
+          "gift_value": 735.0,
+          "unmatched_gift_users": 10,
+          "unmatched_gift_value": 70.0
+        },
+        "baseline_components": {
+          "watch_users": 878,
+          "watch_gift_users": 162,
+          "all_gift_users": 168,
+          "gift_value": 852.0,
+          "unmatched_gift_users": 6,
+          "unmatched_gift_value": 42.0
+        }
+      },
+      "query_ids": [
+        "Q1",
+        "Q3"
+      ]
+    },
+    {
+      "evidence_id": "E8",
+      "kind": "group_contribution",
+      "metric": "avg_viewers",
+      "unit": "人/日",
+      "values": {
+        "dimension": "gender",
+        "group": "g1",
+        "contribution": 1.0,
+        "current_components": {
+          "watch_users": 888,
+          "watch_gift_users": 85,
+          "all_gift_users": 91,
+          "gift_value": 467.0,
+          "unmatched_gift_users": 6,
+          "unmatched_gift_value": 42.0
+        },
+        "baseline_components": {
+          "watch_users": 882,
+          "watch_gift_users": 151,
+          "all_gift_users": 157,
+          "gift_value": 797.0,
+          "unmatched_gift_users": 6,
+          "unmatched_gift_value": 42.0
+        }
+      },
+      "query_ids": [
+        "Q1",
+        "Q3"
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "Q1",
+      "sql": "SELECT activity_date, watch_users, watch_gift_users, all_gift_users, gift_value, unmatched_gift_users, unmatched_gift_value FROM daily_metrics WHERE ((activity_date BETWEEN CAST('2025-05-12' AS DATE) AND CAST('2025-05-17' AS DATE)) OR (activity_date BETWEEN CAST('2025-05-06' AS DATE) AND CAST('2025-05-11' AS DATE))) ORDER BY activity_date",
+      "parameters": {},
+      "columns": [
+        "activity_date",
+        "watch_users",
+        "watch_gift_users",
+        "all_gift_users",
+        "gift_value",
+        "unmatched_gift_users",
+        "unmatched_gift_value"
+      ],
+      "rows": [
+        {
+          "activity_date": "2025-05-10",
+          "watch_users": 294,
+          "watch_gift_users": 53,
+          "all_gift_users": 56,
+          "gift_value": 286.0,
+          "unmatched_gift_users": 3,
+          "unmatched_gift_value": 21.0
+        },
+        {
+          "activity_date": "2025-05-11",
+          "watch_users": 286,
+          "watch_gift_users": 45,
+          "all_gift_users": 48,
+          "gift_value": 246.0,
+          "unmatched_gift_users": 3,
+          "unmatched_gift_value": 21.0
+        },
+        {
+          "activity_date": "2025-05-12",
+          "watch_users": 300,
+          "watch_gift_users": 38,
+          "all_gift_users": 42,
+          "gift_value": 218.0,
+          "unmatched_gift_users": 4,
+          "unmatched_gift_value": 28.0
+        },
+        {
+          "activity_date": "2025-05-13",
+          "watch_users": 281,
+          "watch_gift_users": 41,
+          "all_gift_users": 44,
+          "gift_value": 226.0,
+          "unmatched_gift_users": 3,
+          "unmatched_gift_value": 21.0
+        },
+        {
+          "activity_date": "2025-05-14",
+          "watch_users": 292,
+          "watch_gift_users": 39,
+          "all_gift_users": 42,
+          "gift_value": 216.0,
+          "unmatched_gift_users": 3,
+          "unmatched_gift_value": 21.0
+        },
+        {
+          "activity_date": "2025-05-15",
+          "watch_users": 296,
+          "watch_gift_users": 37,
+          "all_gift_users": 39,
+          "gift_value": 199.0,
+          "unmatched_gift_users": 2,
+          "unmatched_gift_value": 14.0
+        },
+        {
+          "activity_date": "2025-05-16",
+          "watch_users": 306,
+          "watch_gift_users": 35,
+          "all_gift_users": 37,
+          "gift_value": 189.0,
+          "unmatched_gift_users": 2,
+          "unmatched_gift_value": 14.0
+        },
+        {
+          "activity_date": "2025-05-17",
+          "watch_users": 298,
+          "watch_gift_users": 28,
+          "all_gift_users": 30,
+          "gift_value": 154.0,
+          "unmatched_gift_users": 2,
+          "unmatched_gift_value": 14.0
+        },
+        {
+          "activity_date": "2025-05-06",
+          "watch_users": 304,
+          "watch_gift_users": 51,
+          "all_gift_users": 54,
+          "gift_value": 276.0,
+          "unmatched_gift_users": 3,
+          "unmatched_gift_value": 21.0
+        },
+        {
+          "activity_date": "2025-05-07",
+          "watch_users": 284,
+          "watch_gift_users": 53,
+          "all_gift_users": 55,
+          "gift_value": 279.0,
+          "unmatched_gift_users": 2,
+          "unmatched_gift_value": 14.0
+        },
+        {
+          "activity_date": "2025-05-08",
+          "watch_users": 300,
+          "watch_gift_users": 57,
+          "all_gift_users": 58,
+          "gift_value": 292.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-09",
+          "watch_users": 292,
+          "watch_gift_users": 54,
+          "all_gift_users": 54,
+          "gift_value": 270.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        }
+      ],
+      "data_version": "e1a66ce1e469c8b8",
+      "dimension": null,
+      "status": "verified",
+      "elapsed_seconds": 0.15600000000267755
+    },
+    {
+      "query_id": "Q2",
+      "sql": "SELECT activity_date, dimension, segment_value, watch_users, watch_gift_users, all_gift_users, gift_value, unmatched_gift_users, unmatched_gift_value FROM daily_segment_metrics WHERE ((activity_date BETWEEN CAST('2025-05-12' AS DATE) AND CAST('2025-05-17' AS DATE)) OR (activity_date BETWEEN CAST('2025-05-06' AS DATE) AND CAST('2025-05-11' AS DATE))) AND dimension = 'age' ORDER BY activity_date, segment_value",
+      "parameters": {},
+      "columns": [
+        "activity_date",
+        "dimension",
+        "segment_value",
+        "watch_users",
+        "watch_gift_users",
+        "all_gift_users",
+        "gift_value",
+        "unmatched_gift_users",
+        "unmatched_gift_value"
+      ],
+      "rows": [
+        {
+          "activity_date": "2025-05-10",
+          "dimension": "age",
+          "segment_value": "a0",
+          "watch_users": 75,
+          "watch_gift_users": 14,
+          "all_gift_users": 15,
+          "gift_value": 77.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-10",
+          "dimension": "age",
+          "segment_value": "a1",
+          "watch_users": 69,
+          "watch_gift_users": 14,
+          "all_gift_users": 15,
+          "gift_value": 77.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-10",
+          "dimension": "age",
+          "segment_value": "a2",
+          "watch_users": 73,
+          "watch_gift_users": 15,
+          "all_gift_users": 16,
+          "gift_value": 82.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-10",
+          "dimension": "age",
+          "segment_value": "a3",
+          "watch_users": 77,
+          "watch_gift_users": 10,
+          "all_gift_users": 10,
+          "gift_value": 50.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-11",
+          "dimension": "age",
+          "segment_value": "a0",
+          "watch_users": 68,
+          "watch_gift_users": 10,
+          "all_gift_users": 11,
+          "gift_value": 57.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-11",
+          "dimension": "age",
+          "segment_value": "a1",
+          "watch_users": 73,
+          "watch_gift_users": 12,
+          "all_gift_users": 13,
+          "gift_value": 67.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-11",
+          "dimension": "age",
+          "segment_value": "a2",
+          "watch_users": 74,
+          "watch_gift_users": 13,
+          "all_gift_users": 14,
+          "gift_value": 72.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-11",
+          "dimension": "age",
+          "segment_value": "a3",
+          "watch_users": 71,
+          "watch_gift_users": 10,
+          "all_gift_users": 10,
+          "gift_value": 50.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-12",
+          "dimension": "age",
+          "segment_value": "a0",
+          "watch_users": 78,
+          "watch_gift_users": 14,
+          "all_gift_users": 14,
+          "gift_value": 70.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-12",
+          "dimension": "age",
+          "segment_value": "a1",
+          "watch_users": 76,
+          "watch_gift_users": 10,
+          "all_gift_users": 12,
+          "gift_value": 64.0,
+          "unmatched_gift_users": 2,
+          "unmatched_gift_value": 14.0
+        },
+        {
+          "activity_date": "2025-05-12",
+          "dimension": "age",
+          "segment_value": "a2",
+          "watch_users": 76,
+          "watch_gift_users": 11,
+          "all_gift_users": 13,
+          "gift_value": 69.0,
+          "unmatched_gift_users": 2,
+          "unmatched_gift_value": 14.0
+        },
+        {
+          "activity_date": "2025-05-12",
+          "dimension": "age",
+          "segment_value": "a3",
+          "watch_users": 70,
+          "watch_gift_users": 3,
+          "all_gift_users": 3,
+          "gift_value": 15.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-13",
+          "dimension": "age",
+          "segment_value": "a0",
+          "watch_users": 72,
+          "watch_gift_users": 12,
+          "all_gift_users": 12,
+          "gift_value": 60.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-13",
+          "dimension": "age",
+          "segment_value": "a1",
+          "watch_users": 78,
+          "watch_gift_users": 13,
+          "all_gift_users": 13,
+          "gift_value": 65.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-13",
+          "dimension": "age",
+          "segment_value": "a2",
+          "watch_users": 65,
+          "watch_gift_users": 14,
+          "all_gift_users": 15,
+          "gift_value": 77.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-13",
+          "dimension": "age",
+          "segment_value": "a3",
+          "watch_users": 66,
+          "watch_gift_users": 2,
+          "all_gift_users": 4,
+          "gift_value": 24.0,
+          "unmatched_gift_users": 2,
+          "unmatched_gift_value": 14.0
+        },
+        {
+          "activity_date": "2025-05-14",
+          "dimension": "age",
+          "segment_value": "a0",
+          "watch_users": 74,
+          "watch_gift_users": 13,
+          "all_gift_users": 14,
+          "gift_value": 72.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-14",
+          "dimension": "age",
+          "segment_value": "a1",
+          "watch_users": 76,
+          "watch_gift_users": 13,
+          "all_gift_users": 14,
+          "gift_value": 72.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-14",
+          "dimension": "age",
+          "segment_value": "a2",
+          "watch_users": 78,
+          "watch_gift_users": 10,
+          "all_gift_users": 11,
+          "gift_value": 57.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-14",
+          "dimension": "age",
+          "segment_value": "a3",
+          "watch_users": 64,
+          "watch_gift_users": 3,
+          "all_gift_users": 3,
+          "gift_value": 15.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-15",
+          "dimension": "age",
+          "segment_value": "a0",
+          "watch_users": 78,
+          "watch_gift_users": 17,
+          "all_gift_users": 18,
+          "gift_value": 92.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-15",
+          "dimension": "age",
+          "segment_value": "a1",
+          "watch_users": 72,
+          "watch_gift_users": 9,
+          "all_gift_users": 9,
+          "gift_value": 45.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-15",
+          "dimension": "age",
+          "segment_value": "a2",
+          "watch_users": 72,
+          "watch_gift_users": 8,
+          "all_gift_users": 9,
+          "gift_value": 47.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-15",
+          "dimension": "age",
+          "segment_value": "a3",
+          "watch_users": 74,
+          "watch_gift_users": 3,
+          "all_gift_users": 3,
+          "gift_value": 15.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-16",
+          "dimension": "age",
+          "segment_value": "a0",
+          "watch_users": 74,
+          "watch_gift_users": 12,
+          "all_gift_users": 13,
+          "gift_value": 67.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-16",
+          "dimension": "age",
+          "segment_value": "a1",
+          "watch_users": 83,
+          "watch_gift_users": 14,
+          "all_gift_users": 14,
+          "gift_value": 70.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-16",
+          "dimension": "age",
+          "segment_value": "a2",
+          "watch_users": 74,
+          "watch_gift_users": 8,
+          "all_gift_users": 9,
+          "gift_value": 47.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-16",
+          "dimension": "age",
+          "segment_value": "a3",
+          "watch_users": 75,
+          "watch_gift_users": 1,
+          "all_gift_users": 1,
+          "gift_value": 5.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-17",
+          "dimension": "age",
+          "segment_value": "a0",
+          "watch_users": 72,
+          "watch_gift_users": 7,
+          "all_gift_users": 8,
+          "gift_value": 42.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-17",
+          "dimension": "age",
+          "segment_value": "a1",
+          "watch_users": 77,
+          "watch_gift_users": 9,
+          "all_gift_users": 9,
+          "gift_value": 45.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-17",
+          "dimension": "age",
+          "segment_value": "a2",
+          "watch_users": 72,
+          "watch_gift_users": 7,
+          "all_gift_users": 7,
+          "gift_value": 35.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-17",
+          "dimension": "age",
+          "segment_value": "a3",
+          "watch_users": 77,
+          "watch_gift_users": 5,
+          "all_gift_users": 6,
+          "gift_value": 32.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-06",
+          "dimension": "age",
+          "segment_value": "a0",
+          "watch_users": 74,
+          "watch_gift_users": 11,
+          "all_gift_users": 12,
+          "gift_value": 62.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-06",
+          "dimension": "age",
+          "segment_value": "a1",
+          "watch_users": 78,
+          "watch_gift_users": 19,
+          "all_gift_users": 20,
+          "gift_value": 102.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-06",
+          "dimension": "age",
+          "segment_value": "a2",
+          "watch_users": 78,
+          "watch_gift_users": 8,
+          "all_gift_users": 8,
+          "gift_value": 40.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-06",
+          "dimension": "age",
+          "segment_value": "a3",
+          "watch_users": 74,
+          "watch_gift_users": 13,
+          "all_gift_users": 14,
+          "gift_value": 72.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-07",
+          "dimension": "age",
+          "segment_value": "a0",
+          "watch_users": 72,
+          "watch_gift_users": 17,
+          "all_gift_users": 17,
+          "gift_value": 85.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-07",
+          "dimension": "age",
+          "segment_value": "a1",
+          "watch_users": 68,
+          "watch_gift_users": 11,
+          "all_gift_users": 11,
+          "gift_value": 55.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-07",
+          "dimension": "age",
+          "segment_value": "a2",
+          "watch_users": 76,
+          "watch_gift_users": 16,
+          "all_gift_users": 16,
+          "gift_value": 80.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-07",
+          "dimension": "age",
+          "segment_value": "a3",
+          "watch_users": 68,
+          "watch_gift_users": 9,
+          "all_gift_users": 11,
+          "gift_value": 59.0,
+          "unmatched_gift_users": 2,
+          "unmatched_gift_value": 14.0
+        },
+        {
+          "activity_date": "2025-05-08",
+          "dimension": "age",
+          "segment_value": "a0",
+          "watch_users": 74,
+          "watch_gift_users": 17,
+          "all_gift_users": 17,
+          "gift_value": 85.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-08",
+          "dimension": "age",
+          "segment_value": "a1",
+          "watch_users": 79,
+          "watch_gift_users": 18,
+          "all_gift_users": 18,
+          "gift_value": 90.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-08",
+          "dimension": "age",
+          "segment_value": "a2",
+          "watch_users": 69,
+          "watch_gift_users": 13,
+          "all_gift_users": 14,
+          "gift_value": 72.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-08",
+          "dimension": "age",
+          "segment_value": "a3",
+          "watch_users": 78,
+          "watch_gift_users": 9,
+          "all_gift_users": 9,
+          "gift_value": 45.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-09",
+          "dimension": "age",
+          "segment_value": "a0",
+          "watch_users": 68,
+          "watch_gift_users": 17,
+          "all_gift_users": 17,
+          "gift_value": 85.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-09",
+          "dimension": "age",
+          "segment_value": "a1",
+          "watch_users": 74,
+          "watch_gift_users": 13,
+          "all_gift_users": 13,
+          "gift_value": 65.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-09",
+          "dimension": "age",
+          "segment_value": "a2",
+          "watch_users": 77,
+          "watch_gift_users": 11,
+          "all_gift_users": 11,
+          "gift_value": 55.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-09",
+          "dimension": "age",
+          "segment_value": "a3",
+          "watch_users": 73,
+          "watch_gift_users": 13,
+          "all_gift_users": 13,
+          "gift_value": 65.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        }
+      ],
+      "data_version": "e1a66ce1e469c8b8",
+      "dimension": "age",
+      "status": "verified",
+      "elapsed_seconds": 0.15600000000267755
+    },
+    {
+      "query_id": "Q3",
+      "sql": "SELECT activity_date, dimension, segment_value, watch_users, watch_gift_users, all_gift_users, gift_value, unmatched_gift_users, unmatched_gift_value FROM daily_segment_metrics WHERE ((activity_date BETWEEN CAST('2025-05-12' AS DATE) AND CAST('2025-05-17' AS DATE)) OR (activity_date BETWEEN CAST('2025-05-06' AS DATE) AND CAST('2025-05-11' AS DATE))) AND dimension = 'gender' ORDER BY activity_date, segment_value",
+      "parameters": {},
+      "columns": [
+        "activity_date",
+        "dimension",
+        "segment_value",
+        "watch_users",
+        "watch_gift_users",
+        "all_gift_users",
+        "gift_value",
+        "unmatched_gift_users",
+        "unmatched_gift_value"
+      ],
+      "rows": [
+        {
+          "activity_date": "2025-05-10",
+          "dimension": "gender",
+          "segment_value": "g0",
+          "watch_users": 148,
+          "watch_gift_users": 29,
+          "all_gift_users": 31,
+          "gift_value": 159.0,
+          "unmatched_gift_users": 2,
+          "unmatched_gift_value": 14.0
+        },
+        {
+          "activity_date": "2025-05-10",
+          "dimension": "gender",
+          "segment_value": "g1",
+          "watch_users": 146,
+          "watch_gift_users": 24,
+          "all_gift_users": 25,
+          "gift_value": 127.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-11",
+          "dimension": "gender",
+          "segment_value": "g0",
+          "watch_users": 142,
+          "watch_gift_users": 23,
+          "all_gift_users": 25,
+          "gift_value": 129.0,
+          "unmatched_gift_users": 2,
+          "unmatched_gift_value": 14.0
+        },
+        {
+          "activity_date": "2025-05-11",
+          "dimension": "gender",
+          "segment_value": "g1",
+          "watch_users": 144,
+          "watch_gift_users": 22,
+          "all_gift_users": 23,
+          "gift_value": 117.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-12",
+          "dimension": "gender",
+          "segment_value": "g0",
+          "watch_users": 154,
+          "watch_gift_users": 25,
+          "all_gift_users": 27,
+          "gift_value": 139.0,
+          "unmatched_gift_users": 2,
+          "unmatched_gift_value": 14.0
+        },
+        {
+          "activity_date": "2025-05-12",
+          "dimension": "gender",
+          "segment_value": "g1",
+          "watch_users": 146,
+          "watch_gift_users": 13,
+          "all_gift_users": 15,
+          "gift_value": 79.0,
+          "unmatched_gift_users": 2,
+          "unmatched_gift_value": 14.0
+        },
+        {
+          "activity_date": "2025-05-13",
+          "dimension": "gender",
+          "segment_value": "g0",
+          "watch_users": 137,
+          "watch_gift_users": 26,
+          "all_gift_users": 27,
+          "gift_value": 137.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-13",
+          "dimension": "gender",
+          "segment_value": "g1",
+          "watch_users": 144,
+          "watch_gift_users": 15,
+          "all_gift_users": 17,
+          "gift_value": 89.0,
+          "unmatched_gift_users": 2,
+          "unmatched_gift_value": 14.0
+        },
+        {
+          "activity_date": "2025-05-14",
+          "dimension": "gender",
+          "segment_value": "g0",
+          "watch_users": 152,
+          "watch_gift_users": 23,
+          "all_gift_users": 25,
+          "gift_value": 129.0,
+          "unmatched_gift_users": 2,
+          "unmatched_gift_value": 14.0
+        },
+        {
+          "activity_date": "2025-05-14",
+          "dimension": "gender",
+          "segment_value": "g1",
+          "watch_users": 140,
+          "watch_gift_users": 16,
+          "all_gift_users": 17,
+          "gift_value": 87.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-15",
+          "dimension": "gender",
+          "segment_value": "g0",
+          "watch_users": 150,
+          "watch_gift_users": 25,
+          "all_gift_users": 27,
+          "gift_value": 139.0,
+          "unmatched_gift_users": 2,
+          "unmatched_gift_value": 14.0
+        },
+        {
+          "activity_date": "2025-05-15",
+          "dimension": "gender",
+          "segment_value": "g1",
+          "watch_users": 146,
+          "watch_gift_users": 12,
+          "all_gift_users": 12,
+          "gift_value": 60.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-16",
+          "dimension": "gender",
+          "segment_value": "g0",
+          "watch_users": 148,
+          "watch_gift_users": 20,
+          "all_gift_users": 22,
+          "gift_value": 114.0,
+          "unmatched_gift_users": 2,
+          "unmatched_gift_value": 14.0
+        },
+        {
+          "activity_date": "2025-05-16",
+          "dimension": "gender",
+          "segment_value": "g1",
+          "watch_users": 158,
+          "watch_gift_users": 15,
+          "all_gift_users": 15,
+          "gift_value": 75.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-17",
+          "dimension": "gender",
+          "segment_value": "g0",
+          "watch_users": 144,
+          "watch_gift_users": 14,
+          "all_gift_users": 15,
+          "gift_value": 77.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-17",
+          "dimension": "gender",
+          "segment_value": "g1",
+          "watch_users": 154,
+          "watch_gift_users": 14,
+          "all_gift_users": 15,
+          "gift_value": 77.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-06",
+          "dimension": "gender",
+          "segment_value": "g0",
+          "watch_users": 152,
+          "watch_gift_users": 19,
+          "all_gift_users": 20,
+          "gift_value": 102.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-06",
+          "dimension": "gender",
+          "segment_value": "g1",
+          "watch_users": 152,
+          "watch_gift_users": 32,
+          "all_gift_users": 34,
+          "gift_value": 174.0,
+          "unmatched_gift_users": 2,
+          "unmatched_gift_value": 14.0
+        },
+        {
+          "activity_date": "2025-05-07",
+          "dimension": "gender",
+          "segment_value": "g0",
+          "watch_users": 148,
+          "watch_gift_users": 33,
+          "all_gift_users": 33,
+          "gift_value": 165.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-07",
+          "dimension": "gender",
+          "segment_value": "g1",
+          "watch_users": 136,
+          "watch_gift_users": 20,
+          "all_gift_users": 22,
+          "gift_value": 114.0,
+          "unmatched_gift_users": 2,
+          "unmatched_gift_value": 14.0
+        },
+        {
+          "activity_date": "2025-05-08",
+          "dimension": "gender",
+          "segment_value": "g0",
+          "watch_users": 143,
+          "watch_gift_users": 30,
+          "all_gift_users": 31,
+          "gift_value": 157.0,
+          "unmatched_gift_users": 1,
+          "unmatched_gift_value": 7.0
+        },
+        {
+          "activity_date": "2025-05-08",
+          "dimension": "gender",
+          "segment_value": "g1",
+          "watch_users": 157,
+          "watch_gift_users": 27,
+          "all_gift_users": 27,
+          "gift_value": 135.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-09",
+          "dimension": "gender",
+          "segment_value": "g0",
+          "watch_users": 145,
+          "watch_gift_users": 28,
+          "all_gift_users": 28,
+          "gift_value": 140.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        },
+        {
+          "activity_date": "2025-05-09",
+          "dimension": "gender",
+          "segment_value": "g1",
+          "watch_users": 147,
+          "watch_gift_users": 26,
+          "all_gift_users": 26,
+          "gift_value": 130.0,
+          "unmatched_gift_users": 0,
+          "unmatched_gift_value": 0.0
+        }
+      ],
+      "data_version": "e1a66ce1e469c8b8",
+      "dimension": "gender",
+      "status": "verified",
+      "elapsed_seconds": 0.15699999999196734
+    }
+  ],
+  "run_info": {
+    "run_id": "example-synthetic-viewer-activity",
+    "model": "fixture-v1",
+    "model_calls": 0,
+    "sql_attempts": 3,
+    "usage": {
+      "prompt_tokens": 0,
+      "completion_tokens": 0
+    },
+    "elapsed_seconds": 0.5,
+    "data_version": "e1a66ce1e469c8b8",
+    "metric_version": "livestream-metrics-v1",
+    "created_at": "2026-11-06T14:06:18.603370+00:00",
+    "timezone": "Asia/Shanghai"
+  }
+}

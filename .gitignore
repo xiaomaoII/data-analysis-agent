@@ -1,0 +1,35 @@
+.venv/
+.env
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+data/
+reports/runs/
+work/
+*.log
+
+# Local IDE settings, credentials and generated binaries
+.idea/
+.env.*
+!.env.example
+*.pem
+*.key
+*.duckdb
+*.duckdb.wal
+*.sqlite
+*.sqlite3
+*.zip
+build/
+dist/
+
+# Keep only reviewed, reproducible synthetic examples in public Git history
+reports/*
+!reports/ui-preview.jpg
+!reports/evaluation_demo.json
+!reports/public_validation.json
+!reports/examples/
+reports/examples/*
+!reports/examples/index.html
+!reports/examples/index.json
+!reports/examples/synthetic-*/
